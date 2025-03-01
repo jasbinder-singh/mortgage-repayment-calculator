@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import illustration from "../src/assets/images/illustration-empty.svg";
+import btnico from "../src/assets/images/icon-calculator.svg";
 
 const MortgageCalculator = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -36,8 +37,10 @@ const MortgageCalculator = () => {
       <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Form Section */}
         <form onSubmit={handleSubmit(onSubmit)} className="p-12 rounded-[20px_0px_0px_20px]">
-          <h1 className="text-3xl font-bold text-center mb-6">Mortgage Calculator</h1>
-          <h2 className="text-xl font-semibold mb-4">Enter Details</h2>
+          <div className="flex gap-4 items-center flex-wrap content-between mb-6">
+            <h1 className="text-2xl font-bold text-slate-800 text-center">Mortgage Calculator</h1>
+            <a href="#" className=" text-slate-700 underline ml-auto">Clear All</a>
+          </div>
 
           {/* Mortgage Amount */}
           <label className="block font-medium">Mortgage Amount</label>
@@ -102,9 +105,12 @@ const MortgageCalculator = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="mt-6 w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700 transition"
+            className="text-md font-semibold bg-lime text-slate-800 mt-6 w-aut pl-6 pr-6 pt-3 pb-3 rounded-[30px] flex items-center gap-2"
           >
-            Calculate
+            <span><img src={btnico} alt="" /></span>
+            <span>
+            Calculate Repayments
+            </span>
           </button>
         </form>
 
